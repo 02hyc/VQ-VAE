@@ -3,11 +3,12 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class residual_block(nn.Module):
-    def __init__(self, in_channels, out_channels, kernel_size, stride, padding):
+    def __init__(self, in_channels, out_channels, kernel_size, stride):
         super(residual_block, self).__init__()
+        padding = kernel_size // 2
         self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size, stride, padding)
         self.batch_norm = nn.BatchNorm2d(out_channels)
-        self.conv2 = nn.Conv2d(out_channels, out_channels, kernel_size, stride, padding)
+        self.conv2 = nn.Conv2d(out_channels, out_channels, 1, stride, 0)
 
     def forward(self, x):
         residual = x
@@ -26,15 +27,15 @@ class Encoder(nn.Module):
         self.conv2 = nn.Conv2d(hidden_dim, embedding_dim, kernel_size=4, stride=2, padding=1)
         self.batch_norm2 = nn.BatchNorm2d(embedding_dim)
         self.resblock = nn.Sequential(
-            *[residual_block(embedding_dim, embedding_dim, 3, 1, 1) for _ in range(num_resblocks)]
+            *[residual_block(embedding_dim, embedding_dim, 3, 1) for _ in range(num_resblocks)]
         )
 
 
     def forward(self, x):
-        x = F.relu(self.conv1(x))
+        x = self.conv1(x)
         x = F.relu(self.batch_norm1(x))
-        x = F.relu(self.conv2(x))
-        x = F.relu(self.batch_norm2(x))
+        x = self.conv2(x)
+        x = self.batch_norm2(x)
         for i, resblock in enumerate(self.resblock):
             x = resblock(x)
             if i < len(self.resblock) - 1:

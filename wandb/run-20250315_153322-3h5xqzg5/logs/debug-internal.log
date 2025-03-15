@@ -1,0 +1,7 @@
+{"time":"2025-03-15T15:33:22.957338197+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/yukino/Documents/Code/Visual_base/VQVAE/wandb/run-20250315_153322-3h5xqzg5/logs/debug-core.log"}
+{"time":"2025-03-15T15:33:23.062767984+08:00","level":"INFO","msg":"created new stream","id":"3h5xqzg5"}
+{"time":"2025-03-15T15:33:23.062807123+08:00","level":"INFO","msg":"stream: started","id":"3h5xqzg5"}
+{"time":"2025-03-15T15:33:23.062907214+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"3h5xqzg5"}
+{"time":"2025-03-15T15:33:23.062960623+08:00","level":"INFO","msg":"sender: started","stream_id":"3h5xqzg5"}
+{"time":"2025-03-15T15:33:23.063014523+08:00","level":"INFO","msg":"handler: started","stream_id":"3h5xqzg5"}
+{"time":"2025-03-15T15:33:23.583884492+08:00","level":"INFO","msg":"Starting system monitor"}

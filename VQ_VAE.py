@@ -4,11 +4,10 @@ from Encoder import residual_block, Encoder
 from Decoder import Decoder
     
 class VQuantized(torch.nn.Module):
-    def __init__(self, num_embeddings, embedding_dim, beta):
+    def __init__(self, num_embeddings, embedding_dim):
         super(VQuantized, self).__init__()
         self.num_embeddings = num_embeddings
         self.embedding_dim = embedding_dim
-        self.beta = beta
 
         self.codebook = nn.Embedding(num_embeddings, embedding_dim)
         self.codebook.weight.data.uniform_(-1/self.num_embeddings, 1/self.num_embeddings)
@@ -31,21 +30,28 @@ class VQuantized(torch.nn.Module):
         # Find the nearest codebook
         indices = torch.argmin(distance, dim=1).unsqueeze(1) # B*H*W
         quantized = self.codebook(indices).view(batch_size, height, width, channel)
-        quantized = quantized.permute(0, 3, 1, 2).contiguous() # B, C, H, W
-        return indices, quantized
+
+        quantized = quantized.permute(0, 3, 1, 2).contiguous()  # (B, C, H, W)
+        ori_quantized = quantized
+        x = x.reshape(batch_size, height, width, channel).permute(0, 3, 1, 2).contiguous()
+        
+        # straight-through estimator: z + sg[z_q - z]
+        quantized = x + (quantized - x).detach()
+        
+        return indices, quantized, ori_quantized
     
 class VQVAE(nn.Module):
-    def __init__(self, input_dim, hidden_dim, embedding_dim, num_resblocks, num_embeddings, beta):
+    def __init__(self, input_dim, hidden_dim, embedding_dim, num_resblocks, num_embeddings):
         super(VQVAE, self).__init__()
         self.encoder = Encoder(input_dim, hidden_dim, embedding_dim, num_resblocks)
-        self.quantized = VQuantized(num_embeddings, embedding_dim, beta)
+        self.quantized = VQuantized(num_embeddings, embedding_dim)
         self.decoder = Decoder(embedding_dim, hidden_dim, input_dim, num_resblocks)
 
     def forward(self, x):
-        x = self.encoder(x)
-        indices, quantized = self.quantized(x)
+        encoder_output = self.encoder(x)
+        indices, quantized, ori_quantized = self.quantized(encoder_output)
         x_recon = self.decoder(quantized)
-        return x_recon
+        return encoder_output, quantized, ori_quantized, x_recon
 
 if __name__ == '__main__':
     model = VQuantized(512, 64, 0.25)

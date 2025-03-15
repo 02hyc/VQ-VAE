@@ -1,0 +1,15 @@
+{"time":"2025-03-15T16:43:46.203434711+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/yukino/Documents/Code/Visual_base/VQVAE/wandb/run-20250315_164346-xung751i/logs/debug-core.log"}
+{"time":"2025-03-15T16:43:46.308675077+08:00","level":"INFO","msg":"created new stream","id":"xung751i"}
+{"time":"2025-03-15T16:43:46.308730184+08:00","level":"INFO","msg":"stream: started","id":"xung751i"}
+{"time":"2025-03-15T16:43:46.308859353+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"xung751i"}
+{"time":"2025-03-15T16:43:46.308939493+08:00","level":"INFO","msg":"sender: started","stream_id":"xung751i"}
+{"time":"2025-03-15T16:43:46.308993928+08:00","level":"INFO","msg":"handler: started","stream_id":"xung751i"}
+{"time":"2025-03-15T16:43:47.079868135+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-15T16:43:48.629903198+08:00","level":"INFO","msg":"stream: closing","id":"xung751i"}
+{"time":"2025-03-15T16:43:48.629950979+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-15T16:43:48.630712398+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-15T16:43:49.710774618+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-15T16:43:50.265436004+08:00","level":"INFO","msg":"handler: closed","stream_id":"xung751i"}
+{"time":"2025-03-15T16:43:50.265472223+08:00","level":"INFO","msg":"sender: closed","stream_id":"xung751i"}
+{"time":"2025-03-15T16:43:50.265468521+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"xung751i"}
+{"time":"2025-03-15T16:43:50.265524815+08:00","level":"INFO","msg":"stream: closed","id":"xung751i"}

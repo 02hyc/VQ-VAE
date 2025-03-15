@@ -1,0 +1,1 @@
+{"train_loss":0.7848968505859375,"train_reconstruction_loss":0.04378127679228783,"train_quantized_loss":2.9644622802734375,"_timestamp":1.7420296938230162e+09,"_runtime":19.92497648,"_step":61,"_wandb":{"runtime":20}}

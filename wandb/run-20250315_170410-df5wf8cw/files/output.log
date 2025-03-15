@@ -1,0 +1,9 @@
+Epoch 1/10 - Training:   0%|                                                                                                                                                                      | 0/2533 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/yukino/Documents/Code/Visual_base/VQVAE/trainer.py", line 63, in <module>
+    loss = custom_loss_function(output, latent_diff)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yukino/Documents/Code/Visual_base/VQVAE/trainer.py", line 43, in custom_loss_function
+    reconstruction_loss = torch.mean((output - input) ** 2)
+                                      ~~~~~~~^~~~~~~
+TypeError: unsupported operand type(s) for -: 'Tensor' and 'builtin_function_or_method'

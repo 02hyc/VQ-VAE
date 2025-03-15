@@ -1,0 +1,24 @@
+Epoch 1/10 - Training:   0%|                                                                                                                                                                      | 0/2533 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/yukino/Documents/Code/Visual_base/VQVAE/trainer.py", line 63, in <module>
+    encoder_output, quantized, output = vqvae_model(data)
+                                        ^^^^^^^^^^^^^^^^^
+  File "/home/yukino/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yukino/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yukino/Documents/Code/Visual_base/VQVAE/VQ_VAE.py", line 46, in forward
+    indices, quantized = self.quantized(encoder_output)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yukino/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yukino/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yukino/Documents/Code/Visual_base/VQVAE/VQ_VAE.py", line 34, in forward
+    quantized = x + (quantized - x).detach()
+                     ~~~~~~~~~~^~~
+RuntimeError: The size of tensor a (32) must match the size of tensor b (128) at non-singleton dimension 3

@@ -1,0 +1,15 @@
+{"time":"2025-03-15T17:09:08.143634951+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/yukino/Documents/Code/Visual_base/VQVAE/wandb/run-20250315_170908-6uznqj8h/logs/debug-core.log"}
+{"time":"2025-03-15T17:09:08.24741475+08:00","level":"INFO","msg":"created new stream","id":"6uznqj8h"}
+{"time":"2025-03-15T17:09:08.247447847+08:00","level":"INFO","msg":"stream: started","id":"6uznqj8h"}
+{"time":"2025-03-15T17:09:08.247465264+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"6uznqj8h"}
+{"time":"2025-03-15T17:09:08.247520968+08:00","level":"INFO","msg":"sender: started","stream_id":"6uznqj8h"}
+{"time":"2025-03-15T17:09:08.247524981+08:00","level":"INFO","msg":"handler: started","stream_id":"6uznqj8h"}
+{"time":"2025-03-15T17:09:08.946471729+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-15T17:09:56.673602751+08:00","level":"INFO","msg":"stream: closing","id":"6uznqj8h"}
+{"time":"2025-03-15T17:09:56.673631412+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-15T17:09:56.674104363+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-15T17:09:57.794645206+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-15T17:09:58.535578013+08:00","level":"INFO","msg":"handler: closed","stream_id":"6uznqj8h"}
+{"time":"2025-03-15T17:09:58.535613916+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"6uznqj8h"}
+{"time":"2025-03-15T17:09:58.53565517+08:00","level":"INFO","msg":"sender: closed","stream_id":"6uznqj8h"}
+{"time":"2025-03-15T17:09:58.535679401+08:00","level":"INFO","msg":"stream: closed","id":"6uznqj8h"}
