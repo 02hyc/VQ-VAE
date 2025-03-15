@@ -64,7 +64,7 @@ for epoch in range(num_epochs):
             loss = custom_loss_function(data, output, ori_quantized, encoder_output)
             reconstruction_loss = torch.mean((output - data) ** 2)
             quantized_loss = torch.mean((ori_quantized.detach() - encoder_output) ** 2)
-            commitment_loss = torch.mean((encoder_output.detach() - quantized) ** 2)
+            commitment_loss = torch.mean((encoder_output.detach() - ori_quantized) ** 2)
             
             loss.backward()
             optimizer.step()
