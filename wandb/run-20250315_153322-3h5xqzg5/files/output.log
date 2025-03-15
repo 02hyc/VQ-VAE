@@ -1,6 +1,0 @@
-Epoch 1/10 - Training:   8%|███████████▋                                                                                                                                    | 206/2533 [00:46<08:47,  4.41it/s, loss=0.489]
-Traceback (most recent call last):
-  File "/home/yukino/Documents/Code/Visual_base/VQVAE/trainer.py", line 75, in <module>
-    "train_loss": loss.item(),
-                  ^^^^^^^^^^^
-KeyboardInterrupt
